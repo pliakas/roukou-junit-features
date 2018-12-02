@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class RoukouJunitFeaturesApplication
 {
 
+
     public static void main( String[] args )
     {
         SpringApplication.run( RoukouJunitFeaturesApplication.class, args );
