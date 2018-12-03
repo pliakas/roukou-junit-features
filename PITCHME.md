@@ -2,9 +2,6 @@
 
 A programmer-friendly testing framework for Java
 
-# HSLIDLE
+# HSLIDE
 
 ## Agenda
-daldsaldja  
-
-dasdsa
