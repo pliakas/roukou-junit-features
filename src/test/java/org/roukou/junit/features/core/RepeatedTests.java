@@ -26,7 +26,7 @@ class RepeatedTests
 
     @RepeatedTest(value = 10,
         name = "Odd Numbers Generator {currentRepetition} out of {totalRepetitions}")
-    void repeatedTestWithRepetionInfo() {
+    void repeatedTestWithRepetionInfo( RepetitionInfo info ) {
 
         var result = veryBadOddNumberGenerator();
 
@@ -35,6 +35,9 @@ class RepeatedTests
         result.forEach(
             entry -> assertTrue( predicate.test( entry ) )
         );
+
+        System.out.println( "Test Repetition " + info.getCurrentRepetition()
+            + " out of " + info.getTotalRepetitions());
 
     }
 

@@ -13,7 +13,7 @@ import org.junit.jupiter.api.parallel.ExecutionMode;
  *  the junit.jupiter.execution.parallel.enabled configuration parameter to true, e.g. in junit-platform.properties
  */
 
-@Execution( ExecutionMode.SAME_THREAD )
+@Execution( ExecutionMode.CONCURRENT )
 public class ParallelExecution
 {
     @Test

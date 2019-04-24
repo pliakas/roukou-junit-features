@@ -18,6 +18,14 @@ public final class CoreFeatures
     {
         requireNonNull( input, "Cannot be null." );
 
+        try
+        {
+            Thread.sleep( 3000 );
+        }
+        catch( InterruptedException e )
+        {
+            e.printStackTrace();
+        }
         return input.entrySet().stream()
             .flatMap( entry -> entry.getValue().stream()
                 .map( value -> new AbstractMap.SimpleEntry<>( entry.getKey(), value ) ))

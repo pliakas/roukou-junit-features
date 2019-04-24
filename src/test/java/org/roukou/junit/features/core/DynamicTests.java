@@ -39,6 +39,6 @@ class DynamicTests
     {
         return Stream.of( "A", "B", "C" )
             .map( str -> dynamicTest( "test" + str,
-                () -> assertTrue( str.charAt( 0 ) < 'Z' ) ) );
+                () -> assertTrue( str.charAt( 0 ) < 'A' ) ) );
     }
 }

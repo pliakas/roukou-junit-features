@@ -9,7 +9,6 @@ import java.util.Map;
 import java.util.Set;
 
 import static java.time.Duration.ofMillis;
-import static java.time.Duration.ofMinutes;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.roukou.junit.features.core.CoreFeatures.invertMultimap;
 
@@ -59,7 +58,7 @@ class AssertionsTest
 
         //assert
         assertAll( "Invert Map",
-            () -> assertEquals( new HashSet<>( Arrays.asList( "a", "c", "d" ) ), result.get( 1 ) ),
+            () -> assertEquals( new HashSet<>( Arrays.asList( "a", "c", "A" ) ), result.get( 1 ) ),
             () -> assertEquals( new HashSet<>( Arrays.asList( "a", "b", "e" ) ), result.get( 2 ) ),
             () -> assertEquals( new HashSet<>( Arrays.asList( "b", "c", "f" ) ), result.get( 3 ) ),
             () -> assertEquals( new HashSet<>( Arrays.asList( "d", "e", "f" ) ), result.get( 4 ) )
@@ -81,7 +80,7 @@ class AssertionsTest
 
     @Test
     void timeoutNotExceeded() {
-       var result =  assertTimeout(ofMinutes(2), () -> invertMultimap( mapInput ) );
+       var result =  assertTimeout(ofMillis(1000), () -> invertMultimap( mapInput ) );
 
         assertAll( "Invert Map",
             () -> assertEquals( new HashSet<>( Arrays.asList( "a", "c", "d" ) ), result.get( 1 ) ),
